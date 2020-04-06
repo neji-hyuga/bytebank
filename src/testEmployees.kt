@@ -1,5 +1,5 @@
 fun testEmployees() {
-    val employeeOne = Employee(
+    val employeeOne = Internship(
         name = "Sara",
         id = "7000",
         salary = 1000.0
@@ -56,7 +56,7 @@ fun testEmployees() {
         println("forgot your password?")
     }
 
-    val employeeFour = Employee(
+    val employeeFour = Internship(
         name = "Peter",
         id = "7500",
         salary = 500.0

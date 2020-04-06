@@ -13,7 +13,7 @@ class Director(
 
     override val bonus: Double
         get() {
-            return super.bonus + salary + bonusExecutive
+            return salary + bonusExecutive
         }
 
 

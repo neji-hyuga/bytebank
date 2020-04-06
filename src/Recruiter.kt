@@ -1,4 +1,4 @@
-class Internship(
+class Recruiter(
     name: String,
     id: String,
     salary: Double
@@ -8,9 +8,8 @@ class Internship(
     id = id,
     salary = salary
 ) {
-
     override val bonus: Double
-        get() {
-            return salary * 0.10
-        }
+        get() = salary * 0.5
+
+
 }
