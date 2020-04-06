@@ -3,9 +3,9 @@ open class Employee(
     val id: String,
     val salary: Double
 ) {
-    fun bonus(): Double {
-        return salary*0.1
-    }
 
+    //    exemple of single expression function
+    open val bonus: Double
+        get() = salary * 0.1
 
 }

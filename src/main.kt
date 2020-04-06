@@ -1,41 +1,40 @@
 fun main() {
     println("welcome to bytebank:")
 
-    val employeeOne = Employee(
-        name = "Sara",
-        id = "7000",
-        salary = 1000.0
+    val checkingAccountOne = CheckingAccount(
+        client = "Peter",
+        accountNumber = 1000
     )
 
-    println("################################")
-    println("welcome ${employeeOne.name}.")
-    println("yoru id: ${employeeOne.id}")
-    println("your salary: ${employeeOne.salary}")
-    println("your anual bonus: ${employeeOne.bonus()}")
-    println("################################")
-    println("################################")
-    println()
-
-    val employeeTwo = Manager(
-        name = "Steve",
-        id = "8000",
-        salary = 3000.0,
-        password = 1234
+    val savingsAccountOne = SavingsAccount(
+        client = "Phill",
+        accountNumber = 2000
     )
 
-    println("welcome ${employeeTwo.name}.")
-    println("yoru id: ${employeeTwo.id}")
-    println("your salary: ${employeeTwo.salary}")
-    println("your anual bonus: ${employeeTwo.bonus()}")
-    println("################################")
-    println("################################")
+    checkingAccountOne.depositMoney(1000.0)
+    savingsAccountOne.depositMoney(1000.0)
 
-    if(employeeTwo.checkGrade(1234)){
-        println("you're logged in")
-    } else {
-        println("forgot your password?")
-    }
+    println("checking account balance: ${checkingAccountOne.balance}")
+    println("savings account balance: ${savingsAccountOne.balance}")
+
+    checkingAccountOne.withdrawMoney(250.0)
+    savingsAccountOne.withdrawMoney(250.0)
+
+    println("checking account balance: ${checkingAccountOne.balance}")
+    println("savings account balance: ${savingsAccountOne.balance}")
+
+    checkingAccountOne.transferMoney(savingsAccountOne, 200.0)
+
+    println("checking account balance: ${checkingAccountOne.balance}")
+    println("savings account balance: ${savingsAccountOne.balance}")
+
+
+
+
+
 }
+
+
 
 
 

@@ -1,5 +1,5 @@
 // example of constructor in Kotlin
-class Account(
+open class Account(
     var client: String,
     val accountNumber: Int
 ) {
@@ -20,7 +20,7 @@ class Account(
     }
 
 
-    fun withdrawMoney(amount: Double) {
+    open fun withdrawMoney(amount: Double) {
         if (this.balance >= amount) {
             balance -= amount
         }

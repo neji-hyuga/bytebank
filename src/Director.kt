@@ -1,8 +1,9 @@
-class Manager(
+class Director(
     name: String,
     id: String,
     salary: Double,
-    val password: Int
+    val password: Int,
+    val bonusExecutive: Double
 
 ) : Employee(
     name = name,
@@ -12,7 +13,7 @@ class Manager(
 
     override val bonus: Double
         get() {
-            return super.bonus + salary
+            return super.bonus + salary + bonusExecutive
         }
 
 
