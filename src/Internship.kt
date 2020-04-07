@@ -11,6 +11,6 @@ class Internship(
 
     override val bonus: Double
         get() {
-            return salary * 0.10
+            return this.salary * 0.10
         }
 }

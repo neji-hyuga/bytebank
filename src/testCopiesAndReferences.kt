@@ -6,11 +6,11 @@ fun testCopiesAndReferences() {
     println("numberA $numberA")
     println("numberB $numberB")
 
-    val accountThree = Account(client = "ewandro", accountNumber =  3000)
+    val accountThree = SavingsAccount(client = "ewandro", accountNumber =  3000)
 //    accountThree.client = "ewandro"
-    println("hello! ${accountThree.client}")
+    println("hello! ${accountThree.clientAccount}")
 
-    var accountFour = Account(client = "tâninha", accountNumber =  4000)
+    var accountFour = CheckingAccount(client = "tâninha", accountNumber =  4000)
 //    accountFour.client = "tania"
-    println("hello! ${accountFour.client}")
+    println("hello! ${accountFour.clientAccount}")
 }

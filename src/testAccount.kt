@@ -1,21 +1,21 @@
 fun accountBankTests() {
-    val accountOne = Account(client = "victor", accountNumber = 1000)
+    val accountOne = CheckingAccount(client = "victor", accountNumber = 1000)
 //    accountOne.client = "victor"
 //    accountOne.accountNumber = 1000
     accountOne.depositMoney(amount = 300.0)
 
-    val accountTwo = Account(client = "cibelle", accountNumber = 2000)
+    val accountTwo = SavingsAccount(client = "cibelle", accountNumber = 2000)
 //    accountTwo.client = "cibelle"
 //    accountTwo.accountNumber = 2000
     accountTwo.depositMoney(amount = 3000.0)
 
-    println(accountOne.client)
+    println(accountOne.clientAccount)
     println(accountOne.accountNumber)
     println(accountOne.balance)
 
     println("###################################")
 
-    println(accountTwo.client)
+    println(accountTwo.clientAccount)
     println(accountTwo.accountNumber)
     println(accountTwo.balance)
 

@@ -2,12 +2,13 @@ class Manager(
     name: String,
     id: String,
     salary: Double,
-    val password: Int
+    password: Int
 
-) : Employee(
+) : Admin(
     name = name,
     id = id,
-    salary = salary
+    salary = salary,
+    password = password
 ) {
 
     override val bonus: Double
@@ -15,13 +16,4 @@ class Manager(
             return salary
         }
 
-
-    fun checkGrade(pass: Int): Boolean {
-        if (this.password == pass) {
-            return true
-        }
-        return false
-
-
-    }
 }

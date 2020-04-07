@@ -1,10 +1,10 @@
 // example of constructor in Kotlin
-open class Account(
-    var client: String,
+abstract class Account(
+    var clientAccount: String,
     val accountNumber: Int
 ) {
     var balance = 0.0
-        private set
+        protected set
 
 //        examples of GETTERS and SETTERS in Kotlin
 //        get(){return field}
@@ -20,11 +20,7 @@ open class Account(
     }
 
 
-    open fun withdrawMoney(amount: Double) {
-        if (this.balance >= amount) {
-            balance -= amount
-        }
-    }
+    abstract fun withdrawMoney(amount: Double)
 
     fun transferMoney(targetAccount: Account, amount: Double): Boolean {
         if (balance >= amount) {
