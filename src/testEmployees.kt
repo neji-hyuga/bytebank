@@ -28,7 +28,7 @@ fun testEmployees() {
     println("################################")
     println("################################")
 
-    if (employeeTwo.checkGrade(1234)) {
+    if (employeeTwo.checkLogIn(1234)) {
         println("you're logged in")
     } else {
         println("forgot your password?")
@@ -50,7 +50,7 @@ fun testEmployees() {
     println("################################")
     println("################################")
 
-    if (employeeThree.checkGrade(4321)) {
+    if (employeeThree.checkLogIn(4321)) {
         println("you're logged in")
     } else {
         println("forgot your password?")

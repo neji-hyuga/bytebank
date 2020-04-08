@@ -1,7 +1,7 @@
 class CheckingAccount(
     client: String,
     accountNumber: Int
-) : Account(
+) : AccountWithTransfer(
     clientAccount = client,
     accountNumber = accountNumber
 ) {

@@ -20,8 +20,9 @@ fun testLogIn() {
     )
 
     val loginSystem = LoginSystem()
-    loginSystem.logIn(directorOne, 1000)
+    loginSystem.logIn(directorOne, 4321)
     loginSystem.logIn(managerOne, 1234)
-//    loginSystem.logIn(clientOne, 12345)
+    loginSystem.logIn(clientOne, 12345)
+
 
 }

@@ -22,14 +22,6 @@ abstract class Account(
 
     abstract fun withdrawMoney(amount: Double)
 
-    fun transferMoney(targetAccount: Account, amount: Double): Boolean {
-        if (balance >= amount) {
-            balance -= amount
-            targetAccount.depositMoney(amount)
-            return true
-        }
-        return false
-    }
 
 
 }
