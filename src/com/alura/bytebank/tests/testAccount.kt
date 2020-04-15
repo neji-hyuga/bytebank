@@ -1,26 +1,32 @@
 package com.alura.bytebank.tests
 
 import com.alura.bytebank.model.CheckingAccount
+import com.alura.bytebank.model.Client
 import com.alura.bytebank.model.SavingsAccount
 
 fun accountBankTests() {
-    val accountOne = CheckingAccount(client = "victor", accountNumber = 1000)
+
+    val clientOne = Client(name = "victor", id = "365.697.358.11", password = 1234)
+
+    val accountOne = CheckingAccount(accountHolder = clientOne, accountNumber = 1000)
 //    accountOne.client = "victor"
 //    accountOne.accountNumber = 1000
     accountOne.depositMoney(amount = 300.0)
 
-    val accountTwo = SavingsAccount(client = "cibelle", accountNumber = 2000)
+    val clientTwo = Client(name = "cibelle", id = "387.787.238.23", password = 1234)
+
+    val accountTwo = SavingsAccount(accountHolder = clientTwo, accountNumber = 2000)
 //    accountTwo.client = "cibelle"
 //    accountTwo.accountNumber = 2000
     accountTwo.depositMoney(amount = 3000.0)
 
-    println(accountOne.clientAccount)
+    println(accountOne.accountHolder)
     println(accountOne.accountNumber)
     println(accountOne.balance)
 
     println("###################################")
 
-    println(accountTwo.clientAccount)
+    println(accountTwo.accountHolder)
     println(accountTwo.accountNumber)
     println(accountTwo.balance)
 

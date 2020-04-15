@@ -1,10 +1,10 @@
 package com.alura.bytebank.model
 
 abstract class AccountWithTransfer(
-    clientAccount: String,
+    accountHolder: Client,
     accountNumber: Int
 ): Account(
-    clientAccount = clientAccount,
+    accountHolder = accountHolder,
     accountNumber = accountNumber
 ) {
 

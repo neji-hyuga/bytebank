@@ -2,11 +2,23 @@ package com.alura.bytebank.model
 
 class LoginSystem {
 
-    fun logIn(admin: LogIn, password: Int){
-        if(admin.checkLogIn(password)){
+    fun logIn(admin: LogIn, password: Int) {
+        if (admin.checkLogIn(password)) {
             println("welcome to bytebank")
-        } else{
+        } else {
             println("you're not logged in")
+        }
+
+        when (admin) {
+            is Admin -> {
+                println("admin options")
+            }
+            is Employee -> {
+                println("standard options")
+            }
+            else -> {
+                println("regular options")
+            }
         }
     }
 }
