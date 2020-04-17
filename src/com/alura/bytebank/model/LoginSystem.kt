@@ -9,6 +9,7 @@ class LoginSystem {
             println("you're not logged in")
         }
 
+        // WHEN plus IF to possibility more options inside a function
         when (admin) {
             is Admin -> {
                 println("admin options")
