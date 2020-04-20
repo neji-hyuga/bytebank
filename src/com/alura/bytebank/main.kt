@@ -1,53 +1,36 @@
 package com.alura.bytebank
 
 import com.alura.bytebank.model.Address
+import java.lang.ClassCastException
 
 fun main() {
-
-
-    val addressOne = Address(
-        number = 23,
-        street = "Lascelles BLVD",
-        municipality = "Toronto",
-        province = "ON",
-        postalCode = "M4V2B9",
-        unit = "1804"
-    )
-    val addressTwo = Address(
-        number = 107,
-        street = "McCurdy DR",
-        municipality = "Tottenham",
-        province = "ON",
-        postalCode = "L0G1W0",
-        unit = "A"
-    )
-
-    val objectOne: Any = Any()
-
-    printIt(objectOne)
-
-    printIt(1)
-    printIt(1.0)
-    printIt(addressOne)
-    printIt(addressTwo)
-
-    println(addressOne.equals(addressTwo))
-    println(addressOne.equals(addressOne))
-
-    println(addressOne.hashCode())
-    println(addressTwo.hashCode())
-
-
-
-//    val test: Any = printIt(addressTwo)
-//    println(test)
+    println("main has started")
+    functionOne()
+    println("main has ended")
 }
-//in kotlin everything is an object, even an unit,
-//it's a object of something null
-fun printIt(value: Any) : Any{
-    println(value)
-    return (value)
+
+fun functionOne() {
+    println("functionOne has started")
+    try {
+        functionTwo()
+    } catch (e: ClassCastException){
+        e.printStackTrace()
+        println("class cast excepction caught")
+    }
+    println("functionOne has stopped")
 }
+
+fun functionTwo() {
+    println("functionTwo has started")
+    for (i in 1..5){
+        println(i)
+        val address = Any()
+        address as Address
+    }
+    println("functionTwo has stopped")
+}
+
+
 
 
 
