@@ -1,5 +1,6 @@
 package com.alura.bytebank.tests
 
+import com.alura.bytebank.exception.InsufficientFoundsException
 import com.alura.bytebank.model.*
 
 fun testDifferentAccounts() {
@@ -62,5 +63,15 @@ fun testDifferentAccounts() {
 
     println("account holder name: ${checkingAccountOne.accountHolder.name}")
     println("account holder address: ${checkingAccountOne.accountHolder.clientAddress.number} ${checkingAccountOne.accountHolder.clientAddress.street} ${checkingAccountOne.accountHolder.clientAddress.postalCode}" )
+
+    try{
+        checkingAccountOne.transferMoney(targetAccount = savingsAccountOne, amount = 50.0)
+        println("transfer sucessful")
+    }catch (e: InsufficientFoundsException){
+        println("you have insuficient founds")
+        e.printStackTrace()
+    }
+
+    println("your new balance: ${checkingAccountOne.balance}")
 
 }

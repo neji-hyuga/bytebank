@@ -1,21 +1,23 @@
 package com.alura.bytebank.model
 
+import com.alura.bytebank.exception.InsufficientFoundsException
+
 abstract class AccountWithTransfer(
     accountHolder: Client,
     accountNumber: Int
-): Account(
+) : Account(
     accountHolder = accountHolder,
     accountNumber = accountNumber
 ) {
 
-    fun transferMoney(targetAccount: Account, amount: Double): Boolean {
-        if (balance >= amount) {
-            balance -= amount
-            targetAccount.depositMoney(amount)
-            return true
+    fun transferMoney(targetAccount: Account, amount: Double){
+        if (balance < amount) {
+            throw InsufficientFoundsException()
         }
-        return false
+        balance -= amount
+        targetAccount.depositMoney(amount)
+
     }
-
-
 }
+
+
