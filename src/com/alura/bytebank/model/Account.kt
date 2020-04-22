@@ -4,12 +4,12 @@ package com.alura.bytebank.model
 abstract class Account(
     var accountHolder: Client,
     val accountNumber: Int
-) {
+) : LogIn { // if account holder was VAL you can use "LogIn by accountHolder"
     var balance = 0.0
         protected set //  it's outside the constructor because it isn't a mandatory information
 
-    companion object{ // example of "object declaration" and "companion object"
-        var counter  =0
+    companion object { // example of "object declaration" and "companion object"
+        var counter = 0
             private set
     }
 
@@ -18,12 +18,17 @@ abstract class Account(
         counter++
     }
 
-//        examples of GETTERS and SETTERS in Kotlin
+    //        examples of GETTERS and SETTERS in Kotlin
 //        get(){return field}
 //
 //        set(amount){
 //            field = amount
 //        }
+
+    override fun checkLogIn(pass: Int): Boolean {
+        return accountHolder.checkLogIn(pass) //example of DELEGATION
+    }
+
     fun depositMoney(amount: Double) {
         if (amount > 0) {
             this.balance += amount

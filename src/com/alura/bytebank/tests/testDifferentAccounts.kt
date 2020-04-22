@@ -55,7 +55,7 @@ fun testDifferentAccounts() {
     println("savings account balance: ${savingsAccountOne.balance}")
     println("salary account balance: ${salaryAccountOne.balance}")
 
-    checkingAccountOne.transferMoney(savingsAccountOne, 200.0)
+    checkingAccountOne.transferMoney(savingsAccountOne, 200.0, 1234 ) // example without use LABELS
 
 
     println("checking account balance: ${checkingAccountOne.balance}")
@@ -65,7 +65,7 @@ fun testDifferentAccounts() {
     println("account holder address: ${checkingAccountOne.accountHolder.clientAddress.number} ${checkingAccountOne.accountHolder.clientAddress.street} ${checkingAccountOne.accountHolder.clientAddress.postalCode}" )
 
     try{
-        checkingAccountOne.transferMoney(targetAccount = savingsAccountOne, amount = 50.0)
+        checkingAccountOne.transferMoney(targetAccount = savingsAccountOne, amount = 50.0, pass = 4321) //example using LABELS
         println("transfer sucessful")
     }catch (e: InsufficientFoundsException){
         println("you have insuficient founds")

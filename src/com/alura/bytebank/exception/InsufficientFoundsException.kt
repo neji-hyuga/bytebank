@@ -1,3 +1,3 @@
 package com.alura.bytebank.exception
 
-class InsufficientFoundsException : Exception("insufficient founds :(")
+class InsufficientFoundsException(message: String = "you have insufficient founds") : Exception(message)
